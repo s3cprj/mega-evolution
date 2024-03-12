@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="AntiqueWhite"
-      Title="Home">
+      Title="Home"
+      >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -32,7 +33,7 @@
         <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.569,1.2" Height="150" Width="130">
             <Button  Content="はじめる" FontSize="20" Margin="5" Width="120" Height="40" Click="StartButton_Click" />
             <Button  Content="つかいかた" FontSize="20" Margin="5" Width="120" Height="40" Click="HowtouseButton_Click" />
-            <Button Content="おわる" FontSize="20" Margin="5" Width="120" Height="40" Click="CloseButton_Click" />
+            <Button Content="設定" FontSize="20" Margin="5" Width="120" Height="40" Click="SettingButton_Click" />
 
         </StackPanel>
     </Grid>
