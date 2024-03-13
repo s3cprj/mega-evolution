@@ -1,0 +1,97 @@
+## .NET Ignore Rules
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pdb
+*.cache
+*.csproj.user
+*.dll
+*.exe
+*.snk
+*.vsp
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*.nupkg
+*.vspscc
+*.vssscc
+.backup
+*.orig
+packages/
+
+## 除外しない（例外）
+# mydataフォルダ
+![Bb]in/[Dd]ebug/*/mydata/
+![Bb]in/[Rr]elease/*/mydata/
+
+## Visual Studio Code
+.vscode/
+
+## Visual Studio
+.vs/
+*.opendb
+*.dbmdl
+
+## Rider
+.idea/
+
+## User-specific files
+*.rsuser
+*.userosscache
+
+## Mono Auto Generated Files
+mono_crash.*
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## Folder config file
+Desktop.ini
+
+## Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+## Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+## Windows shortcuts
+*.lnk
+
+## JetBrains Rider
+.idea/
+*.sln.iml
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Others
+.DS_Store
+*.swp
+*~
+._*
