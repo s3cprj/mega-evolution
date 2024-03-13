@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Megashinka")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+018b53830eec47502322b645c7f04f4bf6aa3ead")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Megashinka")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Megashinka")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

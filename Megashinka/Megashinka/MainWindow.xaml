@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:Megashinka"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="810"
-        ResizeMode="CanMinimize"
-        Closing="Window_Close">
+        ResizeMode="CanMinimize">
 
     <local:Home />
     

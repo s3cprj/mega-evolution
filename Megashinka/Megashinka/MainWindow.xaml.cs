@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,12 +19,6 @@ namespace Megashinka
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Window_Close(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //ウィンドウを閉じる際に音量を元に戻す処理
-            
         }
     }
 }

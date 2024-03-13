@@ -153,11 +153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\umekawashinnosuke\\hackit2\\mega-evolution\\Megashinka\\Megashinka\\Megashinka.csproj",
+      "projectUniqueName": "C:\\Users\\umekawashinnosuke\\source\\repos\\Megashinka\\Megashinka\\Megashinka.csproj",
       "projectName": "Megashinka",
-      "projectPath": "C:\\Users\\umekawashinnosuke\\hackit2\\mega-evolution\\Megashinka\\Megashinka\\Megashinka.csproj",
+      "projectPath": "C:\\Users\\umekawashinnosuke\\source\\repos\\Megashinka\\Megashinka\\Megashinka.csproj",
       "packagesPath": "C:\\Users\\umekawashinnosuke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\umekawashinnosuke\\hackit2\\mega-evolution\\Megashinka\\Megashinka\\obj\\",
+      "outputPath": "C:\\Users\\umekawashinnosuke\\source\\repos\\Megashinka\\Megashinka\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

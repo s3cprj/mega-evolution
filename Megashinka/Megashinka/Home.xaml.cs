@@ -35,9 +35,9 @@ namespace Megashinka
             Application.Current.MainWindow.Content = new Howtouse();
         }
 
-        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Content = new Setting();
+            Application.Current.Shutdown();
         }
     }
 }

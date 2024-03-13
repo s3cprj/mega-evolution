@@ -72,7 +72,7 @@ namespace Megashinka {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Megashinka;component/normal.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Megashinka;V1.0.0.0;component/normal.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Normal.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
