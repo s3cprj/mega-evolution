@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\digicon_ep5_PC.jpg" />
+    <None Remove="Images\driver_fight.jpg" />
+    <None Remove="Images\driver_normal.jpg" />
+    <None Remove="Images\logo_transparent.png" />
+    <None Remove="Images\normal.png" />
+    <None Remove="Images\surprise.png" />
+    <None Remove="Images\warning.png" />
+    <None Remove="Images\working.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="utils\Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\normal.png" />
+    <Resource Include="Images\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\digicon_ep5_PC.jpg" />
+    <Resource Include="Images\driver_fight.jpg" />
+    <Resource Include="Images\driver_normal.jpg" />
+    <Resource Include="Images\logo_transparent.png" />
+    <Resource Include="Images\surprise.png" />
+    <Resource Include="Images\working.png" />
+  </ItemGroup>
+
+</Project>
