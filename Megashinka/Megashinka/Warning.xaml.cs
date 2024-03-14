@@ -27,11 +27,14 @@ namespace Megashinka
         private void Warning_Loaded(object sender, RoutedEventArgs e)
         {
             // ページが表示された時の処理
+            //　設定ファイルを呼び出しVolumeを設定
+            var volume = int.Parse(SettingsManager.GetSettingValueByKey("volume"));
+            App.VolumeController.SetVolume(volume);
+            //　設定ファイルを呼び出しアラームの音声ファイルパスを取得
+            string alarmSound = SettingsManager.GetSettingValueByKey("alarmSound");
             // BGMを再生する
-            VolumeController controller = new VolumeController();
-            controller.SetVolume(20);
             App.BgmPlayer.IsRepeating = true;
-            App.BgmPlayer.PlayMp3File("mydata/Warning.mp3");
+            App.BgmPlayer.PlayMp3File(alarmSound);
         }
 
         private void Warning_Unloaded(object sender, RoutedEventArgs e)
