@@ -20,8 +20,8 @@ namespace Megashinka
     {
         private DispatcherTimer timer;
         private bool sleepDetectionActive = false;
-        private string exePath = "mydata/eye_blink_detecterv2.exe";
-        private string csvPath = "mydata/output.csv";
+        public string exePath = "mydata/eye_blink_detecterv2.exe";
+        public string csvPath = "mydata/output.csv";
 
         public MainWindow()
         {
@@ -30,6 +30,7 @@ namespace Megashinka
             SetupTimer();
         }
 
+        // 終了時(Windowを閉じる際の処理)
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             App.SleepDetectionProcess.Stop();

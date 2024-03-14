@@ -21,45 +21,80 @@ namespace Megashinka
     /// </summary>
     public partial class Setting : Page
     {
+        private int volume;
+        private string alarmSound;
         public Setting()
         {
             InitializeComponent();
+            LoadSettings();
         }
 
+        private void LoadSettings()
+        {
+            //　設定ファイルを呼び出しVolumeを設定
+            volume = int.Parse(SettingsManager.GetSettingValueByKey("volume"));
+            App.VolumeController.SetVolume(volume);
+            slider.Value = volume;
+            //　設定ファイルを呼び出しラジオボタンを選択
+            string alarmSound = SettingsManager.GetSettingValueByKey("alarmSound");
+            switch (alarmSound)
+            {
+                case "mydata/sound/Warning.mp3":
+                    RadioButton1.IsChecked = true;
+                    break;
+                case "mydata/sound/sound01.mp3":
+                    RadioButton2.IsChecked = true;
+                    break;
+                case "mydata/sound/voice01.mp3":
+                    RadioButton3.IsChecked = true;
+                    break;
+                default:
+                    RadioButton1.IsChecked = true;
+                    break;
+            }
+        }
 
+        private void SaveSettings()
+        {
+            SettingsManager.UpdateSettingValueByKey("volume", volume.ToString());
+            SettingsManager.UpdateSettingValueByKey("alarmSound", alarmSound);
+        }
 
         private void Slider_Change(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             // スライダーの値を取得してint型に変換し、値を表示するTextBlockに設定する
-            int sliderValue = (int)slider.Value;
-
-
-
+            int volume = (int)slider.Value;
+            // 音量を設定
+            App.VolumeController.SetVolume(volume);
         }
 
-
-
-
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void BackIcon_Click(object sender, RoutedEventArgs e)
         {
+            SaveSettings();
+            App.BgmPlayer.Stop();
             Application.Current.MainWindow.Content = new Home();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
-            //ラジオボタンを選択してアラーム音を切り替える処理
+            alarmSound = "mydata/sound/Warning.mp3";
         }
 
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            //ラジオボタンを選択してアラーム音を切り替える処理
+            alarmSound = "mydata/sound/sound01.mp3";
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
-            //ラジオボタンを選択してアラーム音を切り替える処理
+            alarmSound = "mydata/sound/voice01.mp3";
         }
 
+        private void PreviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.BgmPlayer.Stop();
+            App.BgmPlayer.IsRepeating = false;
+            App.BgmPlayer.PlayMp3File(alarmSound);
+        }
     }
 }

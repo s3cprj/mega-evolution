@@ -1,6 +1,6 @@
 ﻿using NAudio.CoreAudioApi;
 
-class VolumeController
+public class VolumeController
 {
     private MMDevice GetDefaultDevice()
     {
