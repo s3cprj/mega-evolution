@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,8 @@ namespace Megashinka
         {
             InitializeComponent();
             LoadSettings();
+            // ここでユーザー設定音の存在を確認して、RadioButton3の有効/無効を設定
+            CheckUserSoundAvailability();
         }
 
         private void LoadSettings()
@@ -43,10 +46,10 @@ namespace Megashinka
                 case "mydata/sound/Warning.mp3":
                     RadioButton1.IsChecked = true;
                     break;
-                case "mydata/sound/sound01.mp3":
+                case "mydata/sound/Voice.mp3":
                     RadioButton2.IsChecked = true;
                     break;
-                case "mydata/sound/voice01.mp3":
+                case "mydata/sound/UserSound.mp3":
                     RadioButton3.IsChecked = true;
                     break;
                 default:
@@ -57,13 +60,15 @@ namespace Megashinka
 
         private void SaveSettings()
         {
+            int volume = (int)slider.Value;
             SettingsManager.UpdateSettingValueByKey("volume", volume.ToString());
             SettingsManager.UpdateSettingValueByKey("alarmSound", alarmSound);
+            App.BgmPlayer.Stop();
         }
 
         private void Slider_Change(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            // スライダーの値を取得してint型に変換し、値を表示するTextBlockに設定する
+            // スライダーの値を取得してint型に変換
             int volume = (int)slider.Value;
             // 音量を設定
             App.VolumeController.SetVolume(volume);
@@ -71,6 +76,7 @@ namespace Megashinka
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            SaveSettings();
             Application.Current.MainWindow.Content = new Home();
         }
 
@@ -81,12 +87,12 @@ namespace Megashinka
 
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            alarmSound = "mydata/sound/sound01.mp3";
+            alarmSound = "mydata/sound/Voice.mp3";
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
-            alarmSound = "mydata/sound/voice01.mp3";
+            alarmSound = "mydata/sound/UserSound.mp3";
         }
 
         public void FileButton_Click(object sender, RoutedEventArgs e)
@@ -94,18 +100,32 @@ namespace Megashinka
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             openFileDialog.Filter = "MP3 ファイル|*.mp3"; // 拡張子が .mp3 のファイルのみを表示
-            openFileDialog.FilterIndex = 1; // フィルターの初期選択を指定
-            openFileDialog.Multiselect = false; // 複数のファイルの選択を許可するかどうかを指定
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.Multiselect = false;
 
             if (openFileDialog.ShowDialog() == true)
             {
-                RadioButton1.IsChecked = false;
-                RadioButton2.IsChecked = false;
-                RadioButton3.IsChecked = false;
-                alarmSound = openFileDialog.FileName; // alarmSoundにファイルパスを格納
-                string selectedFilePath = openFileDialog.FileName;
-                
+                string sourceFilePath = openFileDialog.FileName; // ユーザーが選択したファイルのパス
+                string targetDirectory = "mydata/sound/"; // ファイルを保存するディレクトリ
+                string targetFilePath = System.IO.Path.Combine(targetDirectory, "UserSound.mp3"); // 保存するファイルの完全なパス
+                // ファイルを指定したパスにコピー (既に存在する場合は上書き)
+                System.IO.File.Copy(sourceFilePath, targetFilePath, true);
+                CheckUserSoundAvailability();
+                if (IsUserSoundExists()) { RadioButton3.IsChecked = true; }
             }
+        }
+
+        private bool IsUserSoundExists()
+        {
+            string filePath = "mydata/sound/UserSound.mp3";
+            return File.Exists(filePath);
+        }
+
+        private void CheckUserSoundAvailability()
+        {
+            // ユーザー設定音が存在する場合ラジオボタンを有効化する。
+            bool userSoundExists = IsUserSoundExists();
+            RadioButton3.IsEnabled = userSoundExists;
         }
 
         private void PreviewButton_Click(object sender, RoutedEventArgs e)
