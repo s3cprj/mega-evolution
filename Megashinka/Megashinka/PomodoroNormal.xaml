@@ -25,12 +25,12 @@
         <Rectangle x:Name="divider" Height="100" Stroke="Black" VerticalAlignment="Top" Margin="15,340,89,0"  Fill="White" Grid.RowSpan="3"/>
         <TextBlock TextWrapping="Wrap" Text="やあ！今日も一日、居眠りせずに頑張ろうね！" FontSize="25" VerticalAlignment="Top" Margin="25,348,99,0"/>
         <Image HorizontalAlignment="Left" Source="Images/normal.png" Margin="691,262,0,-68" Grid.RowSpan="4" Width="125"/>
-
-
+      
+      
         <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
-        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
         <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="326,238,0,0" TextWrapping="Wrap" Text="残り時間" VerticalAlignment="Top"/>
-        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="420,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.57,1.716"><Run Language="ja-jp" Text="25:00"/></TextBlock>
+        <TextBlock x:Name="TimerText" FontSize="20" HorizontalAlignment="Left" Margin="420,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.57,1.716"><Run Language="ja-jp" Text="25:00"/></TextBlock>
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
 
 
     </Grid>
