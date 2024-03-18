@@ -14,6 +14,7 @@
     <None Remove="Images\driver_fight.jpg" />
     <None Remove="Images\driver_normal.jpg" />
     <None Remove="Images\logo_transparent.png" />
+    <None Remove="Images\megashinka.png" />
     <None Remove="Images\normal.png" />
     <None Remove="Images\study_gogaku_man_reading.png" />
     <None Remove="Images\study_night_boy.png" />
@@ -31,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\megashinka.png" />
     <Resource Include="Images\normal.png" />
     <Resource Include="Images\study_gogaku_man_reading.png" />
     <Resource Include="Images\study_night_boy.png" />

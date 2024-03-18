@@ -25,14 +25,14 @@
 
 
 
-        <Image Source="Images/logo_transparent.png" HorizontalAlignment="Center" Height="452" Margin="0,-72,0,0" VerticalAlignment="Top" Width="396" Grid.RowSpan="4"/>
+        <Image Margin="200,71,200,208" Grid.RowSpan="4" Source="/Images/megashinka.png" Stretch="Fill" Width="400" Height="121"/>
 
 
 
         <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.569,1.2" Height="150" Width="130">
             <Button  Content="はじめる" FontSize="20" Margin="5" Width="120" Height="40" Click="StartButton_Click" />
             <Button  Content="つかいかた" FontSize="20" Margin="5" Width="120" Height="40" Click="HowtouseButton_Click" />
-			<Button Content="設定" FontSize="20" Margin="5" Width="120" Height="40" Click="SettingButton_Click" />
+            <Button Content="設定" FontSize="20" Margin="5" Width="120" Height="40" Click="SettingButton_Click" />
 
         </StackPanel>
     </Grid>
