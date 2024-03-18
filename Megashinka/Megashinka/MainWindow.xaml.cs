@@ -30,10 +30,10 @@ namespace Megashinka
         private DispatcherTimer breakTimer; // 休憩用タイマー
         private DateTime workTimerStartTime; //最新のworkTImerのスタート時刻を保持
         private DateTime breakTimerStartTime; //最新のbreakTImerのスタート時刻を保持
-        //private TimeSpan workTime = TimeSpan.FromMinutes(25);
-        //private TimeSpan breakTime = TimeSpan.FromMinutes(5);
-        private TimeSpan workTime = TimeSpan.FromSeconds(25);
-        private TimeSpan breakTime = TimeSpan.FromSeconds(10);
+        private TimeSpan workTime = TimeSpan.FromMinutes(25);
+        private TimeSpan breakTime = TimeSpan.FromMinutes(5);
+        //private TimeSpan workTime = TimeSpan.FromSeconds(25);
+        //private TimeSpan breakTime = TimeSpan.FromSeconds(10);
         private bool isWorkTime = true; // 現在が作業時間か休憩時間かを判定
 
         public MainWindow()
