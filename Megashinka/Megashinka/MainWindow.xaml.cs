@@ -21,8 +21,9 @@ namespace Megashinka
         //　全体用
         private DispatcherTimer timer;
         private bool sleepDetectionActive = false;
-        public string exePath = "mydata/eye_blink_detecterv2.exe";
-        public string csvPath = "mydata/output.csv";
+        // public string exePath = "mydata/eye_blink_detecterv2.exe";
+        public string exePath = "dist2/detect.py";
+        public string csvPath = "dist2/mydata/output.csv";
 
         //　ポモドーロ管理用
         private bool pomodoroMode = false;
@@ -103,7 +104,7 @@ namespace Megashinka
         {
             string filePath = csvPath; // CSVファイルのパスを指定
             int numberOfLines = 15; // 読み込む行数
-            double threshold = 0.5; // trueの割合の閾値
+            double threshold = 0.2; // trueの割合の閾値
 
             bool result = FileUtil.CheckTruePercentageInRecentLines(filePath, numberOfLines, threshold);
             return result;
