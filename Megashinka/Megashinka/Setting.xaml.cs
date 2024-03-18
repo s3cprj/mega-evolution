@@ -77,21 +77,16 @@ namespace Megashinka
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/Warning.mp3";
-            FileNameText.Text = string.Empty;
-
         }
 
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/sound01.mp3";
-            FileNameText.Text = string.Empty;
-
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/voice01.mp3";
-            FileNameText.Text = string.Empty;
         }
 
         public void FileButton_Click(object sender, RoutedEventArgs e)
@@ -109,7 +104,6 @@ namespace Megashinka
                 RadioButton3.IsChecked = false;
                 alarmSound = openFileDialog.FileName; // alarmSoundにファイルパスを格納
                 string selectedFilePath = openFileDialog.FileName;
-                FileNameText.Text = System.IO.Path.GetFileName(selectedFilePath);
                 
             }
         }
