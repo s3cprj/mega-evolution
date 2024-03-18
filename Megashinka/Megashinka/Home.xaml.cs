@@ -27,8 +27,9 @@ namespace Megashinka
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Content = new Warning();
+             Application.Current.MainWindow.Content =new Select();
         }
+
 
         private void HowtouseButton_Click(object sender, RoutedEventArgs e)
         {
