@@ -80,11 +80,15 @@ public static class FileUtil
         int trueCount = 0;
         foreach (var line in lines)
         {
-            // CSV行から、最初のカラム（bool値）を取得
+            // CSV行から、最初のカラム（文字列）を取得し、判定ロジックを適用
             var columns = line.Split(',');
-            if (columns.Length > 0 && bool.TryParse(columns[0], out bool result) && result)
+            if (columns.Length > 0)
             {
-                trueCount++;
+                var value = columns[0].ToLower(); // 小文字に変換して比較
+                if (value == "true" || value == "sleep")
+                {
+                    trueCount++;
+                }
             }
         }
         if (lines.Count > 0)
