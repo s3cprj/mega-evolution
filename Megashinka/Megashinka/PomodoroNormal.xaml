@@ -29,7 +29,7 @@
 
         <materialDesign:PackIcon Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click"/>
         <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="326,225,0,0" TextWrapping="Wrap" Text="残り時間" VerticalAlignment="Top"/>
-        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="420,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ja-jp" Text="25:00"/></TextBlock>
+        <TextBlock x:Name="TimerText" FontSize="20" HorizontalAlignment="Left" Margin="420,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ja-jp" Text="25:00"/></TextBlock>
 
 
     </Grid>
