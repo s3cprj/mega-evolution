@@ -104,9 +104,9 @@ namespace Megashinka
         {
             string filePath = csvPath; // CSVファイルのパスを指定
             int numberOfLines = 15; // 読み込む行数
-            double threshold = 0.3; // trueの割合の閾値
+            double sleepThreshold = double.Parse(SettingsManager.GetSettingValueByKey("sleepThreshold"));// trueの割合の閾値
 
-            bool result = FileUtil.CheckTruePercentageInRecentLines(filePath, numberOfLines, threshold);
+            bool result = FileUtil.CheckTruePercentageInRecentLines(filePath, numberOfLines, sleepThreshold);
             return result;
         }
 

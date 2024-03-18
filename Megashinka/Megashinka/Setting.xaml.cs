@@ -24,6 +24,7 @@ namespace Megashinka
     public partial class Setting : Page
     {
         private int volume;
+        private double sleepThreshold;
         private string alarmSound;
         public Setting()
         {
@@ -35,10 +36,14 @@ namespace Megashinka
 
         private void LoadSettings()
         {
+            //　設定ファイルを呼び出しsleepThresholdを設定
+            sleepThreshold = double.Parse(SettingsManager.GetSettingValueByKey("sleepThreshold"));
+            sleepThreshold = (int)(100 - sleepThreshold * 100);
+            Slider0.Value = sleepThreshold;
             //　設定ファイルを呼び出しVolumeを設定
             volume = int.Parse(SettingsManager.GetSettingValueByKey("volume"));
             App.VolumeController.SetVolume(volume);
-            slider.Value = volume;
+            Slider1.Value = volume;
             //　設定ファイルを呼び出しラジオボタンを選択
             string alarmSound = SettingsManager.GetSettingValueByKey("alarmSound");
             switch (alarmSound)
@@ -60,16 +65,24 @@ namespace Megashinka
 
         private void SaveSettings()
         {
-            int volume = (int)slider.Value;
+            int volume = (int)Slider1.Value;
             SettingsManager.UpdateSettingValueByKey("volume", volume.ToString());
             SettingsManager.UpdateSettingValueByKey("alarmSound", alarmSound);
+            double sleepThreshold = 100 - (int)Slider0.Value;
+            sleepThreshold = (double)(sleepThreshold / 100);
+            SettingsManager.UpdateSettingValueByKey("sleepThreshold", sleepThreshold.ToString());
             App.BgmPlayer.Stop();
         }
 
-        private void Slider_Change(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Slider0_Change(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // スライダーの値が変更されたときの処理
+        }
+
+        private void Slider1_Change(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             // スライダーの値を取得してint型に変換
-            int volume = (int)slider.Value;
+            int volume = (int)Slider1.Value;
             // 音量を設定
             App.VolumeController.SetVolume(volume);
         }
