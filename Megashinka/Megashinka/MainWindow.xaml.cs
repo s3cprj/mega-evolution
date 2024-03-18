@@ -22,7 +22,7 @@ namespace Megashinka
         private DispatcherTimer timer;
         private bool sleepDetectionActive = false;
         // public string exePath = "mydata/eye_blink_detecterv2.exe";
-        public string exePath = "dist2/detect.py";
+        public string exePath = "dist2/detect.exe";
         public string csvPath = "dist2/mydata/output.csv";
 
         //　ポモドーロ管理用
