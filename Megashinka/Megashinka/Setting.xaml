@@ -9,20 +9,22 @@
       Background="AntiqueWhite"
       Title="Setting">
 
-	<Grid>
-		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="設定" FontWeight="Bold" FontSize="50" Height="59" Margin="0,57,0,334" Width="120"/>
-		<TextBlock HorizontalAlignment="Left" Margin="131,154,0,0" TextWrapping="Wrap" Text="音量" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526"  />
-		<TextBlock HorizontalAlignment="Left" Margin="103,225,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526" Height="34">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="設定" FontWeight="Bold" FontSize="50" Height="59" Margin="0,57,0,334" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="131,154,0,0" TextWrapping="Wrap" Text="音量" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526"  />
+        <TextBlock HorizontalAlignment="Left" Margin="103,236,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526" Height="34">
 			<Run Language="ja-jp" Text="アラーム音"/>
 			<LineBreak/>
 			<Run Language="ja-jp"/>
-		</TextBlock>
-		<Slider x:Name="slider"  Maximum="100" Minimum="0" Value="50" Margin="259,164,82,266" AutoToolTipPlacement="TopLeft" ValueChanged="Slider_Change" />
-        <RadioButton x:Name="RadioButton1" Content="アラーム音1" FontSize="20" HorizontalAlignment="Left" Margin="259,236,0,0" VerticalAlignment="Top" Height="29" Width="141" Checked="RadioButton_Checked_1"/>
-        <RadioButton x:Name="RadioButton2" Content="アラーム音2" FontSize="20" HorizontalAlignment="Left" Margin="418,236,0,0" VerticalAlignment="Top" Height="29" Width="141" Checked="RadioButton_Checked_2"/>
-        <RadioButton x:Name="RadioButton3" Content="アラーム音3" FontSize="20" HorizontalAlignment="Left" Margin="577,236,0,0" VerticalAlignment="Top" Height="29" Width="141" Checked="RadioButton_Checked_3"/>
+        </TextBlock>
+        <Slider x:Name="slider"  Maximum="100" Minimum="0" Value="50" Margin="259,164,82,266" AutoToolTipPlacement="TopLeft" ValueChanged="Slider_Change" />
+        <RadioButton x:Name="RadioButton1" Content="アラーム音1" FontSize="20" HorizontalAlignment="Left" Margin="250,236,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_1"/>
+        <RadioButton x:Name="RadioButton2" Content="アラーム音2" FontSize="20" HorizontalAlignment="Left" Margin="400,236,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_2"/>
+        <RadioButton x:Name="RadioButton3" Content="アラーム音3" FontSize="20" HorizontalAlignment="Left" Margin="550,236,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_3"/>
         <Button Content="プレビュー" FontSize="20" Width="120" Height="45" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Click="PreviewButton_Click"/>
         <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click" />
+        <Button Content="参照" HorizontalAlignment="Left" Margin="703,236,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="FileButton_Click" />
+        <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="259,276,0,0" TextWrapping="Wrap" FontSize="20"  VerticalAlignment="Top" x:Name="FileNameText" Height="31" Width="406" />
 
-	</Grid>
+    </Grid>
 </Page>
