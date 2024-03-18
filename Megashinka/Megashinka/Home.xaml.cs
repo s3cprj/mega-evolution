@@ -23,22 +23,11 @@ namespace Megashinka
         public Home()
         {
             InitializeComponent();
-            //ホームに戻った際に、睡眠検地を停止
-            var mainWindow = Application.Current.MainWindow as Megashinka.MainWindow;
-            if (mainWindow != null)
-            {
-                mainWindow.DisableSleepDetection();
-            }
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            //スタートボタンを押した際に、睡眠検地を開始
-            var mainWindow = Application.Current.MainWindow as Megashinka.MainWindow;
-            if (mainWindow != null)
-            {
-                mainWindow.EnableSleepDetection();
-            }
+             Application.Current.MainWindow.Content =new Select();
         }
 
 
