@@ -28,9 +28,11 @@ namespace Megashinka
         private bool pomodoroMode = false;
         private DispatcherTimer workTimer; // 作業用タイマー
         private DispatcherTimer breakTimer; // 休憩用タイマー
+        private DateTime workTimerStartTime; //最新のworkTImerのスタート時刻を保持
+        private DateTime breakTimerStartTime; //最新のbreakTImerのスタート時刻を保持
         //private TimeSpan workTime = TimeSpan.FromMinutes(25);
         //private TimeSpan breakTime = TimeSpan.FromMinutes(5);
-        private TimeSpan workTime = TimeSpan.FromSeconds(15);
+        private TimeSpan workTime = TimeSpan.FromSeconds(25);
         private TimeSpan breakTime = TimeSpan.FromSeconds(10);
         private bool isWorkTime = true; // 現在が作業時間か休憩時間かを判定
 
@@ -58,6 +60,7 @@ namespace Megashinka
             EnableSleepDetection();
             pomodoroMode = true;
             isWorkTime = true;
+            workTimerStartTime = DateTime.Now;
             workTimer.Start();
             PomodoroModeUpdateUI();
         }
@@ -68,6 +71,25 @@ namespace Megashinka
             StopPomodoroTimer();
             DisableSleepDetection();
             pomodoroMode = false;
+        }
+
+        // ポモドーロの残り時刻を返すメソッド
+        public TimeSpan GetPomodoroRemainingTime()
+        {
+            DateTime now = DateTime.Now;
+
+            if (isWorkTime)
+            {
+                TimeSpan elapsed = now - workTimerStartTime;
+                TimeSpan remainingWorkTime = workTime - elapsed;
+                return remainingWorkTime;
+            }
+            else
+            {
+                TimeSpan elapsed = now - breakTimerStartTime;
+                TimeSpan remainingBreakTime = breakTime - elapsed;
+                return remainingBreakTime;
+            }
         }
 
         // 終了時(Windowを閉じる際の処理)
@@ -139,11 +161,15 @@ namespace Megashinka
             workTimer.Interval = workTime;
             workTimer.Tick += (sender, e) => {
                 // 作業時間が終了したら休憩タイマーを開始
+                App.BgmPlayer.Stop();
                 DisableSleepDetection();
                 isWorkTime = false;
                 workTimer.Stop();
+                breakTimerStartTime = DateTime.Now;
                 breakTimer.Start();
                 PomodoroModeUpdateUI();
+                App.BgmPlayer.IsRepeating = false;
+                App.BgmPlayer.PlayMp3File("mydata/sound/StartBreakTime.mp3");
             };
 
             // 休憩用タイマーの設定
@@ -151,19 +177,16 @@ namespace Megashinka
             breakTimer.Interval = breakTime;
             breakTimer.Tick += (sender, e) => {
                 // 休憩時間が終了したら作業タイマーを再開
+                App.BgmPlayer.Stop();
                 EnableSleepDetection();
                 isWorkTime = true;
                 breakTimer.Stop();
+                workTimerStartTime = DateTime.Now;
                 workTimer.Start();
                 PomodoroModeUpdateUI();
+                App.BgmPlayer.IsRepeating = false;
+                App.BgmPlayer.PlayMp3File("mydata/sound/StartWorkTime.mp3");
             };
-        }
-
-        // ポモドーロタイマーの開始
-        private void StartPomodoroTimer()
-        {
-            isWorkTime = true;
-            workTimer.Start();
         }
 
         // ポモドーロタイマーの停止
