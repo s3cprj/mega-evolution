@@ -97,7 +97,7 @@ namespace Megashinka
         public void FileButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // 初期ディレクトリを指定
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             openFileDialog.Filter = "MP3 ファイル|*.mp3"; // 拡張子が .mp3 のファイルのみを表示
             openFileDialog.FilterIndex = 1; // フィルターの初期選択を指定
             openFileDialog.Multiselect = false; // 複数のファイルの選択を許可するかどうかを指定
