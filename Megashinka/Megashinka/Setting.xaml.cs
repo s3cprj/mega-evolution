@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,16 +79,39 @@ namespace Megashinka
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/Warning.mp3";
+            FileNameText.Text = string.Empty;
+
         }
 
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/sound01.mp3";
+            FileNameText.Text = string.Empty;
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
             alarmSound = "mydata/sound/voice01.mp3";
+            FileNameText.Text = string.Empty;
+        }
+
+        private void FileButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // 初期ディレクトリを指定
+            openFileDialog.Filter = "MP3 ファイル|*.mp3"; // 拡張子が .mp3 のファイルのみを表示
+            openFileDialog.FilterIndex = 1; // フィルターの初期選択を指定
+            openFileDialog.Multiselect = false; // 複数のファイルの選択を許可するかどうかを指定
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                alarmSound = openFileDialog.FileName; // alarmSoundにファイルパスを格納
+                string selectedFilePath = openFileDialog.FileName;
+                FileNameText.Text = System.IO.Path.GetFileName(selectedFilePath);
+                RadioButton1.IsChecked = false;
+                RadioButton2.IsChecked = false;
+                RadioButton3.IsChecked = false;
+            }
         }
 
         private void PreviewButton_Click(object sender, RoutedEventArgs e)

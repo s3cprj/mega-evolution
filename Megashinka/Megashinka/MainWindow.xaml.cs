@@ -219,11 +219,5 @@ namespace Megashinka
                 timer.Stop();
             }
         }
-
-        private void Window_Close(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //ウィンドウを閉じる際に音量を元に戻す処理
-            
-        }
     }
 }
