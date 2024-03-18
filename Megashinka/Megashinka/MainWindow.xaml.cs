@@ -104,7 +104,7 @@ namespace Megashinka
         {
             string filePath = csvPath; // CSVファイルのパスを指定
             int numberOfLines = 15; // 読み込む行数
-            double threshold = 0.2; // trueの割合の閾値
+            double threshold = 0.3; // trueの割合の閾値
 
             bool result = FileUtil.CheckTruePercentageInRecentLines(filePath, numberOfLines, threshold);
             return result;
