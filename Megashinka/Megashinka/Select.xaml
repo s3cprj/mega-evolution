@@ -20,11 +20,12 @@
         <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,112,0,0" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.221" Grid.Column="1" Height="33" Width="156"><Run Language="ja-jp" Text="ポモドーロ"/><Run Text="モード"/></TextBlock>
         <Image Source="Images/study_gogaku_man_reading.png" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="76" RenderTransformOrigin="0.561,0.117"/>
         <Image Source="Images/study_night_boy.png" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Grid.Column="1"/>
-        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.221" Height="56" Width="272"><Run Text="居眠りを"/><Run Language="ja-jp" Text="しそうになると"/><Run Text="アラームで教えてくれるモードです。"/></TextBlock>
-        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.221" Height="56" Width="272" Grid.Column="1"><Run Language="ja-jp" Text="左の機能に加え、適切な休憩タイミングも教えてくれるモードです。"/></TextBlock>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.221" Height="56" Width="272"><Run Text="居眠りを"/><Run Text="しそうになると"/><Run Text="アラームで"/><LineBreak/><Run Text="教えてくれるモードです。"/></TextBlock>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.221" Height="56" Width="272" Grid.Column="1"><Run Text="左の機能に加え、適切な休憩"/><LineBreak/><Run Text="タイミングも教えてくれるモードです。"/></TextBlock>
         <Button Content="Go!" HorizontalAlignment="Left" Margin="161,350,0,0" VerticalAlignment="Top" Click="NormalButton_Click"/>
         <Button Content="Go!" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top" Grid.Column="1" Click="PomodoroButton_Click"/>
-        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click" />
+        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
 
     </Grid>
 </Page>

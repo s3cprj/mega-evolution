@@ -22,9 +22,10 @@
         <RadioButton x:Name="RadioButton2" Content="アラーム音2" FontSize="20" HorizontalAlignment="Left" Margin="400,236,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_2"/>
         <RadioButton x:Name="RadioButton3" Content="アラーム音3" FontSize="20" HorizontalAlignment="Left" Margin="550,236,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_3"/>
         <Button Content="プレビュー" FontSize="20" Width="120" Height="45" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Click="PreviewButton_Click" Cursor="Hand"/>
-        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click" />
+        
         <Button Content="参照" HorizontalAlignment="Left" Margin="703,236,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="FileButton_Click" />
         <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="259,276,0,0" TextWrapping="Wrap" FontSize="20"  VerticalAlignment="Top" x:Name="FileNameText" Height="31" Width="406" />
-
+        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
     </Grid>
 </Page>
