@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="810"
         ResizeMode="CanMinimize"
-        Closing="Window_Close">
+        Closing="MainWindow_Closing">
 
     <local:Home />
     
