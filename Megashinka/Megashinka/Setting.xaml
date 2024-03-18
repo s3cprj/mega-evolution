@@ -11,19 +11,18 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="設定" FontWeight="Bold" FontSize="50" Height="59" Margin="0,57,0,334" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="131,154,0,0" TextWrapping="Wrap" Text="音量" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526"  />
-        <TextBlock HorizontalAlignment="Left" Margin="103,236,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526" Height="34">
-			<Run Language="ja-jp" Text="アラーム音"/>
-			<LineBreak/>
-			<Run Language="ja-jp"/>
-        </TextBlock>
-        <Slider x:Name="slider"  Maximum="100" Minimum="0" Value="50" Margin="259,164,82,266" AutoToolTipPlacement="TopLeft" ValueChanged="Slider_Change" />
-        <RadioButton x:Name="RadioButton1" Content="警告音" FontSize="20" HorizontalAlignment="Left" Margin="250,243,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_1"/>
-        <RadioButton x:Name="RadioButton2" Content="ボイス" FontSize="20" HorizontalAlignment="Left" Margin="379,243,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_2"/>
-        <RadioButton x:Name="RadioButton3" Content="ユーザー設定" FontSize="20" HorizontalAlignment="Left" Margin="495,243,0,0" VerticalAlignment="Top" Height="29" Width="148" Checked="RadioButton_Checked_3"/>
+        <TextBlock HorizontalAlignment="Left" Text="大きい値ほど細かく睡眠を検知します。(デフォルト70)" FontSize="20" Margin="259,184,0,236" Width="458"/>
+        <TextBlock HorizontalAlignment="Left" Margin="71,149,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526"  ><Run Text="睡眠検知"/><Run Language="ja-jp" Text="感度"/></TextBlock>
+        <Slider x:Name="Slider0"  Maximum="90" Minimum="10" Value="50" Margin="259,159,82,271" AutoToolTipPlacement="TopLeft" ValueChanged="Slider0_Change" />
+        <TextBlock HorizontalAlignment="Left" Margin="131,235,0,0" TextWrapping="Wrap" Text="音量" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526"  />
+        <Slider x:Name="Slider1"  Maximum="100" Minimum="0" Value="50" Margin="259,245,82,185" AutoToolTipPlacement="TopLeft" ValueChanged="Slider1_Change" />
+        <TextBlock HorizontalAlignment="Left" Margin="103,284,0,0" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" RenderTransformOrigin="0.858,0.526" Height="34"><Run Language="ja-jp" Text="アラーム音"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+        <RadioButton x:Name="RadioButton1" Content="警告音" FontSize="20" HorizontalAlignment="Left" Margin="250,291,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_1"/>
+        <RadioButton x:Name="RadioButton2" Content="ボイス" FontSize="20" HorizontalAlignment="Left" Margin="379,291,0,0" VerticalAlignment="Top" Height="29" Width="115" Checked="RadioButton_Checked_2"/>
+        <RadioButton x:Name="RadioButton3" Content="ユーザー設定" FontSize="20" HorizontalAlignment="Left" Margin="495,291,0,0" VerticalAlignment="Top" Height="29" Width="148" Checked="RadioButton_Checked_3"/>
         <Button Content="プレビュー" FontSize="20" Width="120" Height="45" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Click="PreviewButton_Click" Cursor="Hand"/>
 
-        <Button Content="参照" HorizontalAlignment="Left" Margin="648,243,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="FileButton_Click" />
+        <Button Content="参照" HorizontalAlignment="Left" Margin="648,291,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="FileButton_Click" />
         <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
         <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
     </Grid>
