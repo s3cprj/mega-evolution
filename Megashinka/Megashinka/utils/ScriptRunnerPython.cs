@@ -10,7 +10,7 @@ public class ScriptRunnerPython
         runningProcess = new Process();
 
         // Python実行可能ファイルのパスを指定します。環境によってはフルパスが必要になる場合があります。
-        runningProcess.StartInfo.FileName = "python";
+        runningProcess.StartInfo.FileName = "python-3.11.8-embed-amd64/python.exe";
 
         // 実行するスクリプトのパスを引数として指定します。
         runningProcess.StartInfo.Arguments = scriptPath;
