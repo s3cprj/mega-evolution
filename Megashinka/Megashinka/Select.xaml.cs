@@ -51,7 +51,7 @@ namespace Megashinka
             }
         }
 
-        private void BackIcon_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Content = new Home();
         }

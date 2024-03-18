@@ -24,9 +24,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="100,0,0,0" TextWrapping="Wrap" Text="②アプリを付けたまま、勉強や作業に取り組みます。" FontSize="28" VerticalAlignment="Center" Width="571" Grid.Row="2" Height="38"/>
         <TextBlock HorizontalAlignment="Left" Margin="100,5,0,0" TextWrapping="Wrap" Text="③居眠りしそうになると、アラームで起こしてくれます。" FontSize="28" VerticalAlignment="Center" Width="571" Grid.Row="3" Height="37"/>
 
-        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click" />
         <Image Source="Images/working.png" HorizontalAlignment="Left" Height="91" Margin="689,157,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="79"/>
         <Image Source="Images/surprise.png" HorizontalAlignment="Left" Height="100" Margin="676,33,0,0"  VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.385,0.258" Grid.RowSpan="3" Grid.Row="2"/>
-
+        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
     </Grid>
 </Page>

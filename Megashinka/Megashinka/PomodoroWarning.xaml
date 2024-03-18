@@ -22,18 +22,15 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="あなたの現在の眠気は・・・" FontSize="25" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.488,-1.005"><Run FontSize="60" Language="ja-jp" Text="危険!!" Foreground="Red" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/></TextBlock>
-        <Rectangle Grid.Row="2" Height="100" Stroke="Black" VerticalAlignment="Center" Margin="10,0,94,0"  Fill="White"/>
-        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="まばたきが多そうだよ！起きて再び集中しよう！" FontSize="25" VerticalAlignment="Top" Margin="18,10,102,0"/>
-        <Image HorizontalAlignment="Left" Source="Images/warning.png" Margin="698,292,0,-58" Width="189" Grid.RowSpan="4"/>
-
-
-
-        <materialDesign:PackIcon Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click"/>
-        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="326,225,0,0" TextWrapping="Wrap" Text="残り時間" VerticalAlignment="Top"/>
-        <TextBlock x:Name="TimerText" FontSize="20" HorizontalAlignment="Left" Margin="420,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ja-jp" Text="25:00"/></TextBlock>
-
-
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.488,-1.005" Margin="0,145,0,0"><Run FontSize="60" Foreground="Red" Language="ja-jp" Text="危険!!" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/></TextBlock>
+        <Rectangle x:Name="divider" Height="100" Stroke="Black" VerticalAlignment="Top" Margin="15,340,89,0"  Fill="White" Grid.RowSpan="3"/>
+        <TextBlock TextWrapping="Wrap" Text="まばたきが多そうだよ！起きて再び集中しよう！" FontSize="25" VerticalAlignment="Top" Margin="25,348,99,0"/>
+        <Image HorizontalAlignment="Left" Source="Images/warning.png" Margin="701,262,0,-68" Grid.RowSpan="4" Width="125"/>
+      
+        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="326,238,0,0" TextWrapping="Wrap" Text="残り時間" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TimerText" FontSize="20" HorizontalAlignment="Left" Margin="420,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.57,1.716"><Run Language="ja-jp" Text="25:00"/></TextBlock>
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
 
     </Grid>
 </Page>

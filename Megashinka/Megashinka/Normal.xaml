@@ -21,11 +21,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="mainText" Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="あなたの現在の眠気は・・・" FontSize="25" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.488,-1.005"><Run FontSize="60" Language="ja-jp" Text="ふつう" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/></TextBlock>
-        <Rectangle x:Name="divider" Grid.Row="2" Height="100" Stroke="Black" VerticalAlignment="Center" Margin="10,0,94,0"  Fill="White"/>
-        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="やあ！今日も一日、居眠りせずに頑張ろうね！" FontSize="25" VerticalAlignment="Top" Margin="20,10,104,0"/>
-        <Image HorizontalAlignment="Left" Source="Images/normal.png" Margin="691,272,0,-77" Grid.RowSpan="4" Width="125"/>
-        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" MouseLeftButtonDown="BackIcon_Click" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.488,-1.005" Margin="0,145,0,0"><Run FontSize="60" Language="ja-jp" Text="ふつう" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/></TextBlock>
+        <Rectangle x:Name="divider" Height="100" Stroke="Black" VerticalAlignment="Top" Margin="15,340,89,0"  Fill="White" Grid.RowSpan="3"/>
+        <TextBlock TextWrapping="Wrap" Text="やあ！今日も一日、居眠りせずに頑張ろうね！" FontSize="25" VerticalAlignment="Top" Margin="25,348,99,0"/>
+        <Image HorizontalAlignment="Left" Source="Images/normal.png" Margin="691,262,0,-68" Grid.RowSpan="4" Width="125"/>
+        <materialDesign:PackIcon  Kind="SubdirectoryArrowLeft" Margin="15,10,0,0" Height="53" Width="72" />
+        <Button Content="" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" FontSize="40"  Margin="15,10,0,0" Height="53" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click"  />
 
     </Grid>
 </Page>

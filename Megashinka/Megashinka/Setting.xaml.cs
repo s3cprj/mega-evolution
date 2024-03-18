@@ -69,10 +69,8 @@ namespace Megashinka
             App.VolumeController.SetVolume(volume);
         }
 
-        private void BackIcon_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveSettings();
-            App.BgmPlayer.Stop();
             Application.Current.MainWindow.Content = new Home();
         }
 
@@ -87,6 +85,7 @@ namespace Megashinka
         {
             alarmSound = "mydata/sound/sound01.mp3";
             FileNameText.Text = string.Empty;
+
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
@@ -95,7 +94,7 @@ namespace Megashinka
             FileNameText.Text = string.Empty;
         }
 
-        private void FileButton_Click(object sender, RoutedEventArgs e)
+        public void FileButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // 初期ディレクトリを指定
@@ -105,12 +104,13 @@ namespace Megashinka
 
             if (openFileDialog.ShowDialog() == true)
             {
-                alarmSound = openFileDialog.FileName; // alarmSoundにファイルパスを格納
-                string selectedFilePath = openFileDialog.FileName;
-                FileNameText.Text = System.IO.Path.GetFileName(selectedFilePath);
                 RadioButton1.IsChecked = false;
                 RadioButton2.IsChecked = false;
                 RadioButton3.IsChecked = false;
+                alarmSound = openFileDialog.FileName; // alarmSoundにファイルパスを格納
+                string selectedFilePath = openFileDialog.FileName;
+                FileNameText.Text = System.IO.Path.GetFileName(selectedFilePath);
+                
             }
         }
 
